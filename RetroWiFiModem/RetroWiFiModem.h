@@ -72,24 +72,12 @@
     // I've reversed the naming of RTS/CTS to match what they'd be on
     // a modem. The usual naming is correct if the ESP8266 is wired up as
     // a DTE, but kept confusing me here as it's wired up as a DCE.
-   #ifdef ARDUINO_ESP8266_WEMOS_D1R1
-      // D1 R1 pins
-      #define CTS D10           // (GPIO15) output
-      #define RTS D11           // (GPIO13) input
-      #define RI  D12           // (GPIO12) output
-      #define DSR D4            // (GPIO04) output
-      #define DCD D3            // (GPIO05) output
-      #define TXEN D5           // (GPIO14) output
-   #endif
 
-   #ifdef ARDUINO_ESP8266_WEMOS_D1MINI
-      // D1 mini pins
-      #define CTS D8            // (GPIO15) output
-      #define RTS D7            // (GPIO13) input
-      #define RI  D6            // (GPIO12) output
-      #define DSR D2            // (GPIO04) output
-      #define DCD D1            // (GPIO05) output
-      #define TXEN D5           // (GPIO14) output
-   #endif
+      #define CTS 15            // (GPIO15) output
+      #define RTS 13            // (GPIO13) input
+      #define RI  12            // (GPIO12) output
+      #define DSR 4            // (GPIO04) output
+      #define DCD 5            // (GPIO05) output
+      #define DTR 14           // (GPIO14) input
 
 #endif

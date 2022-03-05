@@ -41,8 +41,7 @@ void setup(void) {
    pinMode(RI, OUTPUT);
    pinMode(DCD, OUTPUT);
    pinMode(DSR, OUTPUT);
-   digitalWrite(TXEN, HIGH);     // continue disabling TX until
-   pinMode(TXEN, OUTPUT);        // we have set up the Serial port
+   pinMode(DTR, INPUT);
 
    digitalWrite(RI, !ACTIVE);    // not ringing
    digitalWrite(DCD, !ACTIVE);   // not connected
@@ -57,7 +56,6 @@ void setup(void) {
    sessionTelnetType = settings.telnet;
 
    Serial.begin(settings.serialSpeed, getSerialConfig());
-   digitalWrite(TXEN, LOW);      // enable the TX output
    if( settings.rtsCts ) {
       setHardwareFlow();
    }

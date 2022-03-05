@@ -694,8 +694,6 @@ char *doExtended(char *atCmd) {
 //
 char *resetToNvram(char *atCmd) {
    Serial.flush();                     // allow for CR/LF to finish
-   digitalWrite(TXEN, HIGH);           // before disabling the TX output
    ESP.restart();
    return atCmd;                       // should never actually get here...
 }
-

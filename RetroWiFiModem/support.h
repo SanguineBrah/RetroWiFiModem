@@ -434,7 +434,6 @@ void setupOTAupdates() {
    ArduinoOTA.onEnd([]() {
       Serial.println(F("OTA upload end - programming"));
       Serial.flush();                  // allow serial output to finish
-      digitalWrite(TXEN, HIGH);        // before disabling the TX output
    });
 
    ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
@@ -759,4 +758,3 @@ static bool PagedOut(const __FlashStringHelper *flashStr, bool reset=false) {
 	str[(sizeof str)-1] = 0;
 	return PagedOut(str, reset);
 }
-
